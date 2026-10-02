@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: backend-team
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: backend-team
+spec:
+  replicas: 2
+  selectors:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      
